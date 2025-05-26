@@ -1,0 +1,156 @@
+body {
+  font-family: Arial, sans-serif;
+  max-width: auto;
+  margin: 40px auto;
+  padding: 0 20px;
+  background-color: #f5f5f5;
+  color: #333;
+}
+
+h1,
+h2 {
+  text-align: center;
+  color: #2c3e50;
+}
+
+ul#product-list {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 30px;
+  border: 1px solid #000000;
+  background: white;
+  border-radius: 6px;
+  text-align: center;
+}
+
+ul#product-list li {
+  padding: 10px 15px;
+  border-bottom: 1px solid #eee;
+}
+
+ul#product-list li:last-child {
+  border-bottom: none;
+}
+
+form#product-form {
+  background: white;
+  padding: 20px;
+  border-radius: 6px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+form#product-form input {
+  width: 100%;
+  padding: 10px 12px;
+  margin: 8px 0;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 14px;
+  box-sizing: border-box;
+}
+
+form#product-form button {
+  width: 100%;
+  padding: 12px;
+  background-color: #3498db;
+  border: none;
+  border-radius: 4px;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 12px;
+  transition: background-color 0.3s ease;
+}
+
+form#product-form button:hover {
+  background-color: #2980b9;
+}
+.footer {
+  background-color: #ffffff;
+  color: #000000;
+  padding: 1rem;
+}
+.footer .footer-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+.footer .footer-content .footer-left,
+.footer .footer-content .footer-right {
+  flex: 1;
+  display: flex;
+  align-items: center;
+}
+.footer .footer-content .footer-left {
+  justify-content: flex-start;
+}
+.footer .footer-content .footer-left p {
+  margin: 0;
+  padding: 0 1rem;
+}
+.footer .footer-content .footer-center {
+  flex: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.footer .footer-content .footer-center .social-icon {
+  color: #000000;
+  text-decoration: none;
+  margin: 0 0.5rem;
+}
+.footer .footer-content .footer-center .social-icon:hover {
+  color: rgb(0, 0, 0);
+}
+.footer .footer-content .footer-center .imglogo {
+  height: 50px;
+}
+.footer .footer-content .footer-right {
+  justify-content: center;
+}
+.footer .footer-content .footer-right img {
+  max-width: 100%;
+  height: 70px;
+}
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #ffffff;
+  padding: 10px 20px;
+}
+
+.navbar-left,
+.navbar-right {
+  flex: 1;
+}
+
+.logo {
+  height: 80px;
+}
+
+.navbar-center {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.nav-button {
+  color: #fff;
+  text-decoration: none;
+  padding: 10px 15px;
+  background-color: #000000;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.nav-button:hover {
+  background-color: #777;
+}
+
+.right-icon {
+  height: 80px;
+  float: right;
+}

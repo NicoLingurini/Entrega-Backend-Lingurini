@@ -1,0 +1,13 @@
+{{>navbar}}
+<h1>PRODUCTOS AGREGADOS</h1>
+<ul id="product-list">
+  {{#each products}}
+    <li>
+      <strong>{{title}}</strong>
+      -
+      {{description}}
+      - ${{price}}
+    </li>
+  {{/each}}
+</ul>
+{{>footer}}

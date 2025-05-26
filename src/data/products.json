@@ -1,1 +1,11 @@
-[]
+[
+  {
+    "id": "1748299505185",
+    "title": "fdgh",
+    "description": "Utensillo de cocina",
+    "code": "10021",
+    "price": "2000",
+    "stock": "20",
+    "category": "cubierto"
+  }
+]
