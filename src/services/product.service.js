@@ -4,7 +4,6 @@ class ProductService {
   async getProducts({ limit = 10, page = 1, query = {}, sort } = {}) {
     const filter = {};
     if (query.category) {
-      // Búsqueda exacta, insensible a mayúsculas/minúsculas
       filter.category = { $regex: `^${query.category}$`, $options: "i" };
     }
     if (query.status !== undefined && query.status !== "") {
