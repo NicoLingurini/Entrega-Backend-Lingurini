@@ -1,0 +1,23 @@
+{{> navbar}}
+
+<div class="container my-5 d-flex justify-content-center aline-item-center">
+  <div class="col-md-4 mb-3">
+      <div class="card h-100 shadow-sm">
+        <div class="card-body">
+  <h2>{{product.title}}</h2>
+  <p>{{product.description}}</p>
+  <p><b>Precio:</b> ${{product.price}}</p>
+  <p><b>Categoría:</b> {{product.category}}</p>
+  <p><b>Stock:</b> {{product.stock}}</p>
+  <p>ID del producto: {{product._id}}</p>
+ <form action="/api/carts/684a1d87df39d61d1824cb35/products/{{product._id}}" method="post">
+  <button type="submit" class="btn btn-dark">Agregar al carrito</button>
+</form>
+
+  <a href="/products" class="btn btn-dark">Volver</a>
+</div>
+</div>
+</div>
+</div>
+
+{{> footer}}

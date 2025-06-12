@@ -1,0 +1,43 @@
+{{> navbar}}
+
+<h2>Carrito</h2>
+<div class="d-flex justify-content-center align-items-center">
+  <div class="col-md-4 mb-3">
+    <div class="card h-100 shadow-sm">
+      <div class="card-body">
+        <ul>
+          {{#each cart.products}}
+            <li class="m-2">
+              {{product.title}} (x{{quantity}}) - ${{product.price}}
+              <form action="/api/carts/{{../cart._id}}/products/{{product._id}}?_method=PUT" method="post" style="display:inline;">
+                <input type="hidden" name="quantity" value="{{decrement quantity}}">
+                <button type="submit" class="btn btn-dark" {{#if (eq quantity 1)}}disabled{{/if}} title="Restar">
+                  -
+                </button>
+              </form>
+              <form action="/api/carts/{{../cart._id}}/products/{{product._id}}?_method=PUT" method="post" style="display:inline;">
+                <input type="hidden" name="quantity" value="{{increment quantity}}">
+                <button type="submit" class="btn btn-dark" title="Sumar">
+                  +
+                </button>
+              </form>
+              <form action="/api/carts/{{../cart._id}}/products/{{product._id}}?_method=DELETE" method="post" style="display:inline;">
+                <button type="submit" class="btn btn-dark">Eliminar</button>
+              </form>
+            </li>
+          {{else}}
+            <li>El carrito está vacío.</li>
+          {{/each}}
+        </ul>
+        <p><b>Total:</b> ${{total}}</p>
+        <form action="/api/carts/{{cart._id}}?_method=DELETE" method="post" onsubmit="return confirm('¿Vaciar todo el carrito?')" style="display:inline;">
+          <button type="submit" class="btn btn-dark">Vaciar carrito</button>
+        </form>
+        <a href="/products" class="btn btn-dark">Seguir comprando</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+{{> footer}}
+

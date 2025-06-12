@@ -1,0 +1,67 @@
+
+{{> navbar}}
+
+<h1 class="text-center mb-4">Productos</h1>
+<div class="d-flex justify-content-center">
+<form method="get" class="mb-4 d-flex gap-2 align-items-center w-auto">
+  <input type="text" name="category" placeholder="Categoría" value="{{category}}">
+  <select name="status">
+    <option value="">Estado</option>
+    <option value="true" {{#if (eq status "true")}}selected{{/if}}>Disponible</option>
+    <option value="false" {{#if (eq status "false")}}selected{{/if}}>No disponible</option>
+  </select>
+  <select name="sort">
+    <option value="">Ordenar</option>
+    <option value="asc" {{#if (eq sort "asc")}}selected{{/if}}>Precio ascendente</option>
+    <option value="desc" {{#if (eq sort "desc")}}selected{{/if}}>Precio descendente</option>
+  </select>
+  <input type="number" min="1" name="limit" placeholder="Limite" value="{{limit}}">
+  <button class="btn btn-dark" type="submit">Filtrar</button>
+</form>
+</div>
+
+<div class="row">
+  {{#each products}}
+    <div class="col-md-4 mb-3">
+      <div class="card h-100 shadow-sm">
+        <div class="card-body">
+          <h5 class="card-title">{{title}}</h5>
+          <p class="card-text">{{description}}</p>
+          <p><b>Precio:</b> ${{price}}</p>
+          <p><b>Categoría:</b> {{category}}</p>
+          <p><b>Stock:</b> {{stock}}</p>
+          <a href="/products/{{_id}}" class="btn btn-dark">Ver detalle</a>
+          <form action="/api/carts/684a1d87df39d61d1824cb35/products/{{_id}}" method="post" style="display:inline;">
+      <button type="submit" class="btn btn-dark">Agregar al carrito</button>
+    </form>
+        </div>
+      </div>
+    </div>
+  {{/each}}
+</div>
+
+<nav aria-label="Paginación">
+  <ul class="pagination justify-content-center">
+    <li class="page-item">
+      <a class="btn btn-dark m-4"
+         href="?page={{decrement page}}&limit={{limit}}{{#if category}}&category={{category}}{{/if}}{{#if status}}&status={{status}}{{/if}}{{#if sort}}&sort={{sort}}{{/if}}">
+        Anterior
+      </a>
+    </li>
+
+    <li class="page-item active">
+      <span class="btn btn-dark m-4">{{page}}</span>
+    </li>
+
+    <li class="page-item">
+      <a class="btn btn-dark m-4"
+         href="?page={{increment page}}&limit={{limit}}{{#if category}}&category={{category}}{{/if}}{{#if status}}&status={{status}}{{/if}}{{#if sort}}&sort={{sort}}{{/if}}">
+        Siguiente
+      </a>
+    </li>
+  </ul>
+</nav>
+
+
+
+{{> footer}}
